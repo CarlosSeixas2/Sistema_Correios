@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="titulo">Sistema de Correios</h1>
+    
+    <section class="box-opcoes">
+        <button class="b-cadastro" id="butao">Cadastrar Objeto</button>
+        <button class="b-mostrar" id="butao">Mostrar Todos Objetos</button>
+        <button class="b-remover" id="butao">Remover Objeto</button>
+        <button class="b-buscar" id="butao">Buscar Objeto</button>
+        <button class="b-sair" id="butao">Sair</button>
+    </section>
+
+    <section class="box-cadastro">
+        <label for="codigo">Codigo: </label>
+        <input type="text" id="codigo">
+        <br>
+
+        <label for="data">Data: </label>
+        <input type="date" id="data">
+        <br>
+
+        <label for="cpf">CPF: </label>
+        <input type="text" id="cpf">
+        <br>
+
+        <button id="Bcad" class="buttoncheck"">Cadastrar</button>
+    </section>
+
+    <div class="box-mostrar">
+        <ul class="lista" id="list">
+
+        </ul>
+    </div>
+
+    <section class="box-remover">
+        <label for="cod1">Codigo do Objeto para Remover: </label>
+        <input type="text" id="cod1">
+        <br>
+        <button id="Bre" class="buttoncheck">Remover</button>
+    </section>
+
+    <section class="box-busca">
+        <label for="cod2">Codigo do Objeto para Busca: </label>
+        <input type="text" id="cod2">
+        <br>
+        <button id="Bbus" class="buttoncheck">Buscar</button>
+        <p>Resultado: Objeto<span id="item-buscado"></span></p>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
