@@ -30,7 +30,7 @@ class Objeto {
 
         for(let i = 0; i < localcodigo.length; i++){
             // console.log(`Codigo ${i}: ` + JSON.stringify(localcodigo[i]))
-            li.innerHTML = `Codigo: ` + JSON.stringify(localcodigo[i])
+            li.innerHTML = `Codigo: ` + JSON.stringify(localcodigo[i]).replace(/["]/g, '');
             li.id = this.localcod
             li.className = 'item'
             li.style.listStyleType = 'none'
@@ -41,24 +41,6 @@ class Objeto {
     Mostrar(inputC){
         let box = document.querySelector('.box-mostrar')
         box.style.display = 'block'
-
-        // IGNORE ISSO!
-
-                        // let localcodigo = JSON.parse(localStorage.getItem('Codigo'))
-                        // let ul = document.querySelector('.lista')
-                        // let li = document.createElement('li')
-                        // this.localcod = inputC
-
-                        // for(let i = 0; i < localcodigo.length; i++){
-                        //     console.log(`Codigo ${i}: ` + JSON.stringify(localcodigo[i]))
-                        //     li.innerHTML = `Codigo: ` + JSON.stringify(localcodigo[i])
-                        //     console.log(li)
-                        //     ul.appendChild(li)
-                        //     li.id = 'item'
-                        //     li.className = this.localcod
-                        //     li.style.listStyleType = 'none'
-                        // }
-                        // ul.removeChild(li)
     }
 
     Remover(removecod){
@@ -72,8 +54,12 @@ class Objeto {
             if(removecod == local[i]){
                 ul.removeChild(target)
                 this.codigo.splice(i, 1)
+                this.data.splice(i, 1)
+                this.cpf.splice(i, 1)
                 local.splice(i, 1)
                 localStorage.setItem('Codigo', JSON.stringify(local))
+                localStorage.setItem('Data', JSON.stringify(local))
+                localStorage.setItem('CPF', JSON.stringify(local))
             }
         }
     }
@@ -113,14 +99,6 @@ let ButaoBusca = document.querySelector('#Bbus')
 // Area das funções
 
 let p = new Objeto();
-
-// function buttonc(){
-//     let inputC = document.querySelector('#codigo').value
-//     let inputD = document.querySelector('input[type="date"]').value
-//     let inputCpf = document.querySelector('#cpf').value
-
-//     p.Cadastrar(inputC, inputD, inputCpf)
-// }
 
 ButaoCadastro.addEventListener('click', function(){
     let inputC = document.querySelector('#codigo').value
